@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Xml;
 
@@ -10,8 +11,10 @@ namespace GFC_Tools
         public void Main()
         {
             var variables = new Variables();
-            variables.Main();
+            var gfc_downloader = new GFC_Downloader();
 
+            variables.Main();
+            gfc_downloader.DownloadZip("http://gfcdownloads.co.nf/download/gfc/?wpdmdl=80",Path.GetTempPath()+ "gfc.zip");
 
 
         }
